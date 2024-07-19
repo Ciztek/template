@@ -10,3 +10,4 @@ docs.pdf
 .build
 *.[aod]
 template
+.pre-commit-config.yaml
