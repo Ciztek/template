@@ -59,7 +59,35 @@
 
       devShells.default = pkgs.mkShell {
         hardeningDisable = ["format" "fortify"];
-        packages = with pkgs; [
+        packages = with pkgs; let
+          doxy-tex = texlive.combine {
+            inherit
+              (texlive)
+              scheme-basic
+              adjustbox
+              alphalph
+              caption
+              changepage
+              collection-fontsrecommended
+              ec
+              enumitem
+              etoc
+              etoolbox
+              fancyvrb
+              float
+              hanging
+              metafont
+              multirow
+              newunicodechar
+              stackengine
+              tocloft
+              ulem
+              varwidth
+              wasysym
+              xcolor
+              ;
+          };
+        in [
           # build
           gcc
           clang
@@ -71,7 +99,7 @@
           python3Packages.gcovr
           # docs
           doxygen
-          texlive.combined.scheme-full
+          doxy-tex
           # compile_commands.json
           python3Packages.compiledb
           # coding style
