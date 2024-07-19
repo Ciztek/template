@@ -1,0 +1,12 @@
+# nix
+result*
+.direnv
+
+# docs
+docs/
+docs.pdf
+
+# build
+.build
+*.[aod]
+template
