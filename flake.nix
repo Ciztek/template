@@ -24,7 +24,7 @@
 
     cs = cs-flake.packages.${system}.report;
     cs-wrapped = pkgs.writeShellScriptBin "cs" ''
-      ${cs}/bin/cs . --ignore-rules=C-O1,C-G1
+      ${cs}/bin/cs . --ignore-rules=C-G1 --use-gitignore
     '';
   in {
     formatter.${system} = pkgs.alejandra;
@@ -64,7 +64,7 @@
         cs-wrapped
       ];
 
-      inputsFrom = [self.packages.${system}.docs];
+      inputsFrom = [self.packages.${system}.docs_pdf];
 
       shellHook = ''
          ${self.checks.${system}.pre-commit-check.shellHook}
