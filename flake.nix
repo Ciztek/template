@@ -49,52 +49,22 @@
 
     devShells.${system}.default = pkgs.mkShell {
       hardeningDisable = ["format" "fortify"];
-      packages = with pkgs; let
-        doxy-tex = texlive.combine {
-          inherit
-            (texlive)
-            scheme-basic
-            adjustbox
-            alphalph
-            caption
-            changepage
-            collection-fontsrecommended
-            ec
-            enumitem
-            etoc
-            etoolbox
-            fancyvrb
-            float
-            hanging
-            metafont
-            multirow
-            newunicodechar
-            stackengine
-            tocloft
-            ulem
-            varwidth
-            wasysym
-            xcolor
-            ;
-        };
-      in [
-        # build
-        gcc
-        clang
-        gnumake
-        # debugging
+      packages = with pkgs; [
+        # debuggingg
         valgrind
         # tests
         criterion
         python3Packages.gcovr
         # docs
         doxygen
-        doxy-tex
         # compile_commands.json
+        bear
         python3Packages.compiledb
         # coding style
         cs-wrapped
       ];
+
+      inputsFrom = [self.packages.${system}.docs];
 
       shellHook = ''
          ${self.checks.${system}.pre-commit-check.shellHook}
@@ -132,6 +102,7 @@
       bins = ["template" "debug"];
     in
       {
+        docs_pdf = pkgs.callPackage ./nix/docs_pdf.nix {};
         default = build-project {
           name = "template";
           inherit bins;
