@@ -10,11 +10,11 @@
         "vera-clang": "vera-clang"
       },
       "locked": {
-        "lastModified": 1721398604,
-        "narHash": "sha256-G4I+Gt7s6jgiOpPlvvGt2eqFB7KZBypra61G0ivek0E=",
+        "lastModified": 1724505200,
+        "narHash": "sha256-6dyjE2VvK6kQbvt4aTHp4SHA6U/qCKavXnsTPWnu1bQ=",
         "owner": "Sigmapitech",
         "repo": "cs",
-        "rev": "2c1df705afcc9a2bad7fe694aab8f8c8fdc3e5c4",
+        "rev": "48700f8aec63398bd2ce013f2eb1c6abe105746b",
         "type": "github"
       },
       "original": {
@@ -177,11 +177,11 @@
     "ruleset": {
       "flake": false,
       "locked": {
-        "lastModified": 1712846006,
-        "narHash": "sha256-JecscGk+xa/i3xLUWvqOJUaau8apRJyfF9mimXyPa1I=",
+        "lastModified": 1721722326,
+        "narHash": "sha256-smacvpspEG97jM37No/wi4RuFNR0WZOXDCmVTAnM4ds=",
         "ref": "refs/heads/main",
-        "rev": "9a005159de4f296a5bf560f5e97ac17c9905f6cb",
-        "revCount": 170,
+        "rev": "bbe149da23300d3570c6ba023d86ed04db7de009",
+        "revCount": 197,
         "type": "git",
         "url": "ssh://git@github.com/Epitech/banana-coding-style-checker.git"
       },
