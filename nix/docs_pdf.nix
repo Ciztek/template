@@ -2,7 +2,6 @@
   stdenv,
   texlive,
   lib,
-  tree,
   ncurses,
   doxygen,
 }: let
@@ -44,10 +43,7 @@ in
     installPhase = ''
       runHook preInstall
 
-      mkdir -p $out
-
-      ${tree}/bin/tree
-      install -m 640 docs.pdf -t $out
+      install -Dm 640 docs.pdf -t $out
 
       runHook postInstall
     '';
