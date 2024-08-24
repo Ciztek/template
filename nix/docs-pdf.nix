@@ -34,7 +34,7 @@
   };
 in
   stdenv.mkDerivation {
-    name = "docs_pdf";
+    name = "docs-pdf";
     src = ./..;
 
     enableParallelBuilding = true;

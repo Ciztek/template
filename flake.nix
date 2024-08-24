@@ -64,7 +64,7 @@
         cs-wrapped
       ];
 
-      inputsFrom = [self.packages.${system}.docs_pdf];
+      inputsFrom = [self.packages.${system}.docs-pdf];
 
       shellHook = ''
          ${self.checks.${system}.pre-commit-check.shellHook}
@@ -102,7 +102,7 @@
       bins = ["template" "debug"];
     in
       {
-        docs_pdf = pkgs.callPackage ./nix/docs_pdf.nix {};
+        docs-pdf = pkgs.callPackage ./nix/docs-pdf.nix {};
         default = build-project {
           name = "template";
           inherit bins;
