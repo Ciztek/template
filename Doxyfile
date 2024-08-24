@@ -351,3 +351,4 @@ GENERATE_LEGEND        = YES
 DOT_CLEANUP            = YES
 MSCGEN_TOOL            =
 MSCFILE_DIRS           =
+TIMESTAMP = NO
