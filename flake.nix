@@ -100,12 +100,12 @@
 
           meta.mainProgram = builtins.head bins;
         };
-      bins = ["template" "debug"];
+      bins = ["release" "debug" "check"];
     in
       {
         docs-pdf = pkgs.callPackage ./nix/docs-pdf.nix {};
         default = build-project {
-          name = "template";
+          name = "bundle";
           inherit bins;
         };
       }
