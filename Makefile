@@ -30,7 +30,7 @@ check-flags := $(debug-flags) -fsanitize=address,leak,undefined
 $(eval $(call mk-recipe-binary, check, SRC-OUT, check-flags))
 
 .PHONY: bundle
-bundle: debug all
+bundle: debug check all
 
 all: $(out-release)
 
@@ -45,6 +45,12 @@ fclean: clean
 .PHONY: mrproper
 mrproper: fclean
 	$Q $(RM) -r $(BUILD_DIR)
+
+
+# auto-completion fix:
+pdf docs docs-clean docs-fclean docs-re:
+
+include ./makeincludes/docs.mk
 
 .PHONY: re
 .NOTPARALLEL: re
