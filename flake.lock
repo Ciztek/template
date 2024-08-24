@@ -10,11 +10,11 @@
         "vera-clang": "vera-clang"
       },
       "locked": {
-        "lastModified": 1724505200,
-        "narHash": "sha256-6dyjE2VvK6kQbvt4aTHp4SHA6U/qCKavXnsTPWnu1bQ=",
+        "lastModified": 1724506729,
+        "narHash": "sha256-EW73vddkccQBLLIxKqf8HaXpgqkEbNx8vsaqxQHNexk=",
         "owner": "Sigmapitech",
         "repo": "cs",
-        "rev": "48700f8aec63398bd2ce013f2eb1c6abe105746b",
+        "rev": "71832ebee388fb3ac4d77dba47bb9e02e649f036",
         "type": "github"
       },
       "original": {
