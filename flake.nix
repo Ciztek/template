@@ -66,6 +66,7 @@
 
       inputsFrom = [self.packages.${system}.docs-pdf];
 
+      env.MANPATH = "./docs/man";
       shellHook = ''
          ${self.checks.${system}.pre-commit-check.shellHook}
 
