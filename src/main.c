@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "local.h"
 
@@ -12,5 +13,5 @@ int main(void)
     puts("foo is set!");
     local_cflag_demo();
 #endif
-    return 0;
+    return EXIT_SUCCESS;
 }

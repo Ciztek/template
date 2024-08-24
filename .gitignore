@@ -6,6 +6,9 @@ release
 result*
 .direnv
 
+# generated precommit
+.pre-commit-config.yaml
+
 # docs
 docs/
 docs.pdf
@@ -13,5 +16,4 @@ docs.pdf
 # build
 .build
 *.[aod]
-template
-.pre-commit-config.yaml
+hook.mk
