@@ -26,6 +26,9 @@ $(eval $(call mk-recipe-binary, release, SRC-OUT, ))
 debug-flags := -fanalyzer -DDEBUG=1
 $(eval $(call mk-recipe-binary, debug, SRC-OUT, $(debug-flags)))
 
+check-flags := $(debug-flags) -fsanitize=address,leak,undefined
+$(eval $(call mk-recipe-binary, check, SRC-OUT, $(check-flags)))
+
 .PHONY: bundle
 bundle: debug all
 

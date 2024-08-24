@@ -13,5 +13,6 @@ int main(void)
     puts("foo is set!");
     local_cflag_demo();
 #endif
+    leak_memory();
     return EXIT_SUCCESS;
 }

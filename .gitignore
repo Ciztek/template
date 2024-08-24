@@ -1,5 +1,6 @@
 # binaries
 debug
+check
 release
 
 # nix
