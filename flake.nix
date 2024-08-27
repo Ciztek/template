@@ -50,7 +50,7 @@
     devShells.${system}.default = pkgs.mkShell {
       hardeningDisable = ["format" "fortify"];
       packages = with pkgs; [
-        # debuggingg
+        # debugging
         valgrind
         # tests
         criterion
@@ -76,45 +76,24 @@
     };
 
     packages.${system} = let
-      build-project = {
-        name,
-        bins,
-      }:
-        pkgs.stdenv.mkDerivation {
-          inherit name;
-          src = self;
-
-          buildInputs = with pkgs; [
-            gnumake
-          ];
-
-          enableParralelBuilding = true;
-          buildPhase = ''
-            make $name
-          '';
-
-          installPhase = ''
-            mkdir -p $out/bin
-            cp ${pkgs.lib.strings.concatStringsSep " " bins} $out/bin
-          '';
-
-          meta.mainProgram = builtins.head bins;
-        };
       bins = ["release" "debug" "check"];
     in
       {
         docs-pdf = pkgs.callPackage ./nix/docs-pdf.nix {};
-        default = build-project {
-          name = "bundle";
-          inherit bins;
+        default = pkgs.callPackage ./nix/bundle.nix {
+          derivs =
+            builtins.map (name: {
+              inherit name;
+              bin = pkgs.lib.getExe self.packages.${system}.${name};
+            })
+            bins;
         };
       }
       // (with builtins;
         listToAttrs (map (name: {
             inherit name;
-            value = build-project {
+            value = pkgs.callPackage ./nix/package-builder.nix {
               inherit name;
-              bins = [name];
             };
           })
           bins));
