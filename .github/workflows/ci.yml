@@ -85,6 +85,12 @@ jobs:
       - name: Run the Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v2
 
+      - name: create the verbatim branch
+        run: |
+          git checkout -b verbatim || git checkout verbatim
+          git push --set-upstream target verbatim --force
+          git checkout main
+
       - name: Reset repo
         run: |
           git update-ref -d HEAD
