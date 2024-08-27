@@ -14,13 +14,15 @@ out-$(strip $1) := $(strip $1)
 
 $$(BUILD_DIR)/$(strip $1)/%.o: %.c
 	@ mkdir -p $$(dir $$@)
-	$$Q $$(CC) $$(CFLAGS) $$(CFLAGS_@$$(notdir $$(@:.o=))) $$($3) -o $$@ -c $$<
+		$$Q $$(CC) \
+		$$(CFLAGS) $$(CFLAGS_@$$(notdir $$(@:.o=))) $3 \
+		-o $$@ -c $$<
 	@ $$(LOG_TIME) "CC $$(C_PURPLE) $$(notdir $$@) $$(C_RESET)"
 
 $$(out-$(strip $1)): $$(obj-$(strip $1))
 	@ mkdir -p $$(dir $$@)
-	$$Q $$(CC) -o $$@ $$(obj-$(strip $1))             \
-		$$(CFLAGS) $$(CFLAGS_@$$(notdir $$(@:.o=))) $$($3) \
+	$$Q $$(CC) -o $$@ $$(obj-$(strip $1))             	         \
+		$$(CFLAGS) $$(CFLAGS_@$$(notdir $$(@:.o=))) $3 \
 		$$(LDLIBS) $$(LDFLAGS)
 	@ $$(LOG_TIME) "LD $$(C_GREEN) $$@ $$(C_RESET)"
 
