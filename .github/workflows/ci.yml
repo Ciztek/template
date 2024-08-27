@@ -77,7 +77,7 @@ jobs:
         run: |
           git config --global user.email "115845162+imjohntitor@users.noreply.github.com"
           git config --global user.name "ImJohnTitor"
-          git remote add epitech "${{ secrets.GH_TARGET_REPO }}"
+          git remote add target "${{ secrets.GH_TARGET_REPO }}"
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v4
@@ -99,6 +99,6 @@ jobs:
           git commit -m \
             "[skip ci] Mirror (${{ github.event.repository.updated_at }})"
 
-      - name: push to epitech
+      - name: push to target
         run: |
-          git push epitech main --force
+          git push target main --force

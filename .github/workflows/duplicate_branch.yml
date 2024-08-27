@@ -1,0 +1,46 @@
+name: duplicate_branch
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+  workflow_dispatch:
+
+env:
+  GH_PUB_KEY:
+    github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl
+  GH_BOT_ACC_EMAIL:
+    41898282+github-actions[bot]@users.noreply.github.com
+  GH_BOT_ACC_NAME:
+    github-actions[bot]
+
+jobs:
+  duplicate-branches:
+    if: ${{ !startsWith(github.repository, 'Sigmapitech') }}
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Get branch name
+        id: branch-names
+        uses: tj-actions/branch-names@v6
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ steps.branch-names.outputs.head_ref_branch }}
+
+      - name: setup git
+        run: |
+          git config --local user.email $GH_BOT_ACC_EMAIL
+          git config --local user.name $GH_BOT_ACC_NAME
+          git remote add target "${{ secrets.GH_TARGET_REPO }}"
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.GH_SSH_PRIVATE_KEY }}
+          known_hosts: $GH_PUB_KEY
+
+      - name: push to target
+        run: |
+          git push target $(git branch | cut -d" " -f 2) --force
