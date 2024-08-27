@@ -4,7 +4,15 @@
   lib,
   ncurses,
   doxygen,
+  fetchFromGitHub,
 }: let
+  doxygen-awesome-css = fetchFromGitHub {
+    owner = "jothepro";
+    repo = "doxygen-awesome-css";
+    rev = "28ed396de19cd3d803bcb483dceefdb6d03b1b2b";
+    hash = "sha256-EtCv9bJJKWWL7/5KDnmQJV3JSk18qpcxEkQAyCpx+Lo=";
+  };
+
   doxygen-tex = texlive.combine {
     inherit
       (texlive)
@@ -36,6 +44,11 @@ in
   stdenv.mkDerivation {
     name = "docs-pdf";
     src = ./..;
+
+    preConfigure = ''
+      cp -r ${doxygen-awesome-css} doxygen-awesome-css
+      chmod -R +w doxygen-awesome-css
+    '';
 
     enableParallelBuilding = true;
     makeFlags = ["pdf"];
