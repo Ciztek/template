@@ -39,6 +39,15 @@
           entry = "${cs-wrapped}/bin/cs";
           files = "\\.*";
         };
+
+        commit-name = {
+          enable = true;
+          name = "commit name";
+          stages = ["commit-msg"];
+          entry = ''
+            ${pkgs.python310.interpreter} ${./check_commit_msg.py}
+          '';
+        };
       };
     in {
       pre-commit-check = pre-commit-hooks.lib.${system}.run {
