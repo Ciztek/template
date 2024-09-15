@@ -6,7 +6,11 @@ CFLAGS += -iquote .
 CFLAGS += -MMD -MP
 CFLAGS += -O2
 
+ifneq ($(EXPLICIT_FLAGS),1)
 CFLAGS += @base_flags.txt
+else
+CFLAGS += $(shell cat base_flags.txt)
+endif
 
 LDFLAGS += -flto
 LDLIBS ?=
