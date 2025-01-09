@@ -1,0 +1,20 @@
+{
+    "project_name": "Tmp",
+    "_copy_without_render": [
+        "includes",
+        "makeincludes",
+        "nix",
+        "src",
+        ".gitignore",
+        "base_flags.txt",
+        "check_commit_msg.py",
+        "dockerfile",
+        "Doxyfile",
+        "ecsls.toml",
+        "flake.nix",
+        "flake.lock",
+        "header.html",
+        "Makefile",
+        "sourcelist.mk"
+    ]
+}
