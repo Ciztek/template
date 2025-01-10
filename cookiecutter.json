@@ -4,6 +4,11 @@
       "path": "C",
       "title": "C Template",
       "description": "The C template"
-    }
+    },
+    "project-2": {
+        "path": "Haskell",
+        "title": "Haskell Template",
+        "description": "The Haskell template"
+      }
   }
 }
