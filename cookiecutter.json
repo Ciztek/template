@@ -1,9 +1,9 @@
 {
   "templates": {
     "project-1": {
-       "path": "C",
-       "title": "C Template",
-       "description": "The fucking C template"
+      "path": "C",
+      "title": "C Template",
+      "description": "The C template"
     }
   }
 }

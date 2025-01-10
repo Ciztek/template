@@ -1,7 +1,7 @@
 # binaries
 debug
 check
-release
+{{ cookiecutter.project_name }}
 
 # nix
 result*

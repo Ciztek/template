@@ -24,7 +24,7 @@ $(if $(auto-complete),$(error this should not happen),)
 
 ifdef auto-complete
 # generated binaries
-release debug check:
+{{ cookiecutter.project_name }} debug check:
 
 # from docs.mk:
 pdf docs docs-clean docs-fclean docs-re:

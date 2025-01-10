@@ -5,16 +5,12 @@
         "makeincludes",
         "nix",
         "src",
-        ".gitignore",
         "base_flags.txt",
-        "check_commit_msg.py",
-        "dockerfile",
         "Doxyfile",
         "ecsls.toml",
         "flake.nix",
         "flake.lock",
         "header.html",
-        "Makefile",
         "sourcelist.mk"
     ]
 }
