@@ -11,6 +11,8 @@
         "flake.nix",
         "flake.lock",
         "header.html",
-        "sourcelist.mk"
+        "sourcelist.mk",
+        "check_commit_msg.py",
+        "dockerfile"
     ]
 }

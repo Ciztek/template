@@ -1,7 +1,0 @@
-{
-    "project_name": "Tmp",
-    "_copy_without_render": [
-        "check_commit_msg.py",
-        "dockerfile"
-    ]
-}
