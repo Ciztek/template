@@ -6,9 +6,9 @@
     pkgs = nixpkgs.legacyPackages.${system};
 
     create-template = with pkgs; writeShellScriptBin "run" ''
-      ${lib.getExe cookiecutter} https://github.com/Ciztek/Template \
+      ${lib.getExe cookiecutter} ${./.} \
         --checkout main \
-        --output-dir ${./.}
+        --output-dir .
     '';
 
   in {
