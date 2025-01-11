@@ -8,7 +8,7 @@
     create-template = with pkgs; writeShellScriptBin "run" ''
       ${lib.getExe cookiecutter} https://github.com/Ciztek/Template \
         --checkout main \
-        --output-dir .
+        --output-dir ${./.}
     '';
 
   in {
