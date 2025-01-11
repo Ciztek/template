@@ -11,7 +11,7 @@ homepage:       https://github.com/{{ cookiecutter.github_owner }}/{{ cookiecutt
 bug-reports:    https://github.com/{{ cookiecutter.github_owner }}/{{ cookiecutter.project_name }}/issues
 author:         {{ cookiecutter.group_name }}
 maintainer:     {{ cookiecutter.mail }}
-copyright:      {% now 'utc', '%Y-%M-%D' %} {{ cookiecutter.group_name }}
+copyright:      {% now 'utc', '%Y' %} {{ cookiecutter.group_name }}
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple

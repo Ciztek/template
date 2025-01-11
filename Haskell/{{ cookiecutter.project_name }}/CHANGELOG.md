@@ -8,4 +8,4 @@ and this project adheres to the
 
 ## Unreleased
 
-## 0.1.0.0 - {% now 'utc', '%Y-%M-%D' %}
+## 0.1.0.0 - {% now 'utc', '%D' %}
