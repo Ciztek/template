@@ -27,9 +27,9 @@ library
   exposed-modules:
       Lib
   other-modules:
-      Paths_Tmp
+      Paths_{{ cookiecutter.project_name }}
   autogen-modules:
-      Paths_Tmp
+      Paths_{{ cookiecutter.project_name }}
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
@@ -40,14 +40,14 @@ library
 executable {{ cookiecutter.project_name }}-exe
   main-is: Main.hs
   other-modules:
-      Paths_Tmp
+      Paths_{{ cookiecutter.project_name }}
   autogen-modules:
-      Paths_Tmp
+      Paths_{{ cookiecutter.project_name }}
   hs-source-dirs:
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      Tmp
+      {{ cookiecutter.project_name }}
     , base >=4.7 && <5
   default-language: Haskell2010
 
@@ -55,13 +55,13 @@ test-suite {{ cookiecutter.project_name }}-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_Tmp
+      Paths_{{ cookiecutter.project_name }}
   autogen-modules:
-      Paths_Tmp
+      Paths_{{ cookiecutter.project_name }}
   hs-source-dirs:
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      Tmp
+      {{ cookiecutter.project_name }}
     , base >=4.7 && <5
   default-language: Haskell2010

@@ -45,7 +45,7 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - Tmp
+    - {{ cookiecutter.project_name }}
 
 tests:
   {{ cookiecutter.project_name }}-test:
@@ -56,4 +56,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - Tmp
+    - {{ cookiecutter.project_name }}
