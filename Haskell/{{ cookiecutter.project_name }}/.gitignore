@@ -1,3 +1,21 @@
-.stack-work/
-*~
+# binaries
+debug
+check
 {{ cookiecutter.project_name }}
+
+# nix
+result*
+.direnv
+
+# generated precommit
+.pre-commit-config.yaml
+
+# docs
+docs/
+docs.pdf
+
+# build
+.stack-work/
+.build
+*.[aod]
+hook.mk

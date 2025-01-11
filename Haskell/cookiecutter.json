@@ -3,5 +3,9 @@
     "project_name": "tmp",
     "group_name": "Tmp",
     "mail": "gabriel.hosquet@epitech.eu",
-    "github_owner": "Ciztek"
+    "github_owner": "Ciztek",
+    "_copy_without_render": [
+        "dockerfile",
+        "check_commit_msg.py"
+    ]
 }
