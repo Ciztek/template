@@ -1,9 +1,9 @@
 name:                {{ cookiecutter.project_name }}
 version:             0.1.0.0
-github:              "Ciztek/{{ cookiecutter.project_name }}"
+github:              "{{ cookiecutter.github_owner }}/{{ cookiecutter.project_name }}"
 license:             BSD-3-Clause
 author:              "{{ cookiecutter.group_name }}"
-maintainer:          "gabriel.hosquet@epitech.eu"
+maintainer:          "{{ cookiecutter.mail }}"
 copyright:           "{% now 'utc', '%Y-%M-%D' %} {{ cookiecutter.group_name }}"
 
 extra-source-files:
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/Ciztek/{{ cookiecutter.project_name }}#readme>
+description:         Please see the README on GitHub at <https://github.com/{{ cookiecutter.github_owner }}/{{ cookiecutter.project_name }}#readme>
 
 dependencies:
 - base >= 4.7 && < 5
