@@ -1,6 +1,7 @@
 {
-    "project_name": "Tmp",
+    "binary_name": "tmp",
+    "project_name": "tmp",
     "group_name": "Tmp",
-    "mail" : "gabriel.hosquet@epitech.eu",
+    "mail": "gabriel.hosquet@epitech.eu",
     "github_owner": "Ciztek"
 }
