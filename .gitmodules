@@ -1,0 +1,3 @@
+[submodule "C/{{ cookiecutter.project_name }}/doxygen-awesome-css"]
+	path = C/{{ cookiecutter.project_name }}/doxygen-awesome-css
+	url = https://github.com/jothepro/doxygen-awesome-css.git

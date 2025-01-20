@@ -2,6 +2,7 @@
 debug
 check
 {{ cookiecutter.project_name }}
+unittests
 
 # nix
 result*

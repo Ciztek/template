@@ -63,12 +63,12 @@
         valgrind
         # tests
         criterion
-        python3Packages.gcovr
+        gcovr
         # docs
         doxygen
         # compile_commands.json
         bear
-        python3Packages.compiledb
+        compiledb
         # coding style
         cs-wrapped
       ];

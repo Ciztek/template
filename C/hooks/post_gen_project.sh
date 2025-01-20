@@ -1,7 +1,7 @@
 #!/bin/sh
 
-cp ../Common/{{ cookiecutter.project_name }}/* .
-cp ../Common/{{ cookiecutter.project_name }}/.* .
+chmod +w *
+chmod +w .*
 
 mv * ..
 mv .* ..
