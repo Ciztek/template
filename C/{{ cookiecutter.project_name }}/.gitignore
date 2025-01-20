@@ -19,3 +19,4 @@ docs.pdf
 .build
 *.[aod]
 hook.mk
+*.gocv.json.gz

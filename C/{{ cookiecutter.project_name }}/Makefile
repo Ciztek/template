@@ -84,6 +84,7 @@ clean: #? clean: removes object files
 .PHONY: fclean
 fclean: clean #? fclean: remove binaries and object files
 	$Q $(RM) -r $(_fclean)
+	$Q $(RM) -r *.gcov.json.gz
 
 .PHONY: mrproper
 mrproper: fclean #? mrproper: remove all generated files
