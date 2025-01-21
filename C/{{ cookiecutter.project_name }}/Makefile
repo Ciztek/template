@@ -39,7 +39,7 @@ UNIT := unittests
 
 CFLAGS_@main += -DFOO=1
 
-$(eval $(call mk-recipe-binary, release, SRC-OUT, ))
+$(eval $(call mk-recipe-binary, {{ cookiecutter.project_name }}, SRC-OUT, ))
 
 test-src := $(filter-out %main.c, $(SRC-OUT))
 test-src += $(TST-OUT)
@@ -54,10 +54,10 @@ check-flags := $(debug-flags) -fsanitize=address,leak,undefined
 $(eval $(call mk-recipe-binary, check, SRC-OUT, $(check-flags)))
 
 .PHONY: all #? all: default, build the release binary
-all: $(out-release)
+all: $(out-{{ cookiecutter.project_name }})
 
 .PHONY: bundle #? bundle: build all binaries
-bundle: debug check all
+bundle: debug check all $(UNIT)
 
 .PHONY: tests_run #? tests_run: build and run the unit tests
 tests_run: $(UNIT)
@@ -69,12 +69,12 @@ cov: tests_run
 		--gcov-ignore-errors=no_working_dir_found \
 		--exclude-unreachable-branches \
 		--exclude tests \
-		--exclude .direnv
+		--exclude-directories .direnv
 	$Q gcovr . --object-directory .build/tests \
 		--gcov-ignore-errors=no_working_dir_found \
 		--exclude-unreachable-branches \
 		--gcov-exclude tests \
-		--gcov-exclude \.direnv \
+		--gcov-exclude-directories .direnv \
 		--txt-metric branch
 
 .PHONY: clean
