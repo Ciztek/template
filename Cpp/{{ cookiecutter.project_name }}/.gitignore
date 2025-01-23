@@ -1,0 +1,22 @@
+# binaries
+debug
+check
+{{ cookiecutter.project_name }}
+unittests
+
+# nix
+result*
+.direnv
+
+# generated precommit
+.pre-commit-config.yaml
+
+# docs
+docs/
+docs.pdf
+
+# build
+.build
+*.[aod]
+hook.mk
+*.gocv.json.gz

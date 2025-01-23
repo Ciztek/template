@@ -9,6 +9,11 @@
         "path": "Haskell",
         "title": "Haskell Template",
         "description": "The Haskell template"
-      }
+    },
+    "project-3": {
+        "path":"Cpp",
+        "title": "Cpp template",
+        "description": "The template for c++"
+    }
   }
 }

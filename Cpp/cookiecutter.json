@@ -1,0 +1,18 @@
+{
+    "project_name": "Tmp",
+    "_copy_without_render": [
+        "includes",
+        "makeincludes",
+        "nix",
+        "src",
+        "base_flags.txt",
+        "Doxyfile",
+        "ecsls.toml",
+        "flake.nix",
+        "flake.lock",
+        "header.html",
+        "sourcelist.mk",
+        "check_commit_msg.py",
+        "dockerfile"
+    ]
+}
