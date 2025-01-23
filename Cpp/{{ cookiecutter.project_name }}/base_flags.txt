@@ -11,8 +11,6 @@
 -Wduplicated-cond
 
 -fvisibility=hidden
--Wmissing-prototypes
--Wstrict-prototypes
 
 -Wwrite-strings
 -Wstrict-aliasing=0
@@ -20,5 +18,4 @@
 -Wunreachable-code
 
 -Werror=format-nonliteral
--Werror=int-conversion
 -Werror=return-type
