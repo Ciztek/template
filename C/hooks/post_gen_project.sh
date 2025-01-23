@@ -1,7 +1,7 @@
 #!/bin/sh
 
-chmod +w *
-chmod +w .*
+chmod +w * -R
+chmod +w .* -R
 
 mv * ..
 mv .* ..

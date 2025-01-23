@@ -65,29 +65,27 @@ tests_run: $(UNIT)
 
 .PHONY: cov #? cov: run the tests and generate coverage report
 cov: tests_run
-	$Q gcovr . --object-directory .build/tests \
-		--gcov-ignore-errors=no_working_dir_found \
+	$Q gcovr . \
 		--exclude-unreachable-branches \
 		--exclude tests \
 		--exclude-directories .direnv
-	$Q gcovr . --object-directory .build/tests \
-		--gcov-ignore-errors=no_working_dir_found \
+	$Q gcovr . \
 		--exclude-unreachable-branches \
-		--gcov-exclude tests \
-		--gcov-exclude-directories .direnv \
+		--exclude tests \
+		--exclude-directories .direnv \
 		--txt-metric branch
 
-.PHONY: clean
-clean: #? clean: removes object files
+.PHONY: clean #? clean: removes object files
+clean:
 	$Q $(RM) -r $(_clean)
 
-.PHONY: fclean
-fclean: clean #? fclean: remove binaries and object files
+.PHONY: fclean #? fclean: remove binaries and object files
+fclean: clean
 	$Q $(RM) -r $(_fclean)
 	$Q $(RM) -r *.gcov.json.gz
 
-.PHONY: mrproper
-mrproper: fclean #? mrproper: remove all generated files
+.PHONY: mrproper #? mrproper: remove all generated files
+mrproper: fclean
 	$Q $(RM) -r $(BUILD_DIR)
 
 .PHONY: help
